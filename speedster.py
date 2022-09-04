@@ -17,11 +17,7 @@ rfm9x.tx_power = 13 #default is 13 can go up to 23dB
 
 while True:
     
-    while True:
-        packet = rfm9x.receive()
-        
-        if (packet is not None):
-            break 
+    packet = rfm9x.receive()
     
     rfm9x.send(bytes("ok", "utf-8"))
 
