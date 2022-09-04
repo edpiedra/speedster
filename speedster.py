@@ -20,6 +20,7 @@ while True:
     packet = rfm9x.receive()
     
     rfm9x.send(bytes("ok", "utf-8"))
-
-    speeds = list(np.array(str(packet, "ascii").split("|"), dtype="float"))
-    drive._set_direction( speeds[0], speeds[1] )
+    
+    if packet is not None:
+        speeds = list(np.array(str(packet, "ascii").split("|"), dtype="float"))
+        drive._set_direction( speeds[0], speeds[1] )
