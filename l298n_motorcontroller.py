@@ -48,6 +48,11 @@ class L298N():
             GPIO.output(self.m1a, GPIO.LOW)
             GPIO.output(self.m1b, GPIO.LOW)
             
+        if (left_speed>0 and right_speed<0) or \
+            (left_speed<0 and right_speed>0):
+                left_speed = left_speed * 0.5
+                right_speed = right_speed * 0.5
+            
         self.m2pwm.start(abs(left_speed))
         self.m1pwm.start(abs(right_speed))
         
