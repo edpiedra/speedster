@@ -4,8 +4,8 @@ class L298N():
     def __init__(self):
         print("[INFO] initializing L298N chip...")
         
-        self.m1en, self.m1b, self.m1a = 17, 22, 27
-        self.m2en, self.m2b, self.m2a = 25, 24, 23
+        self.m2en, self.m2b, self.m2a = 17, 22, 27
+        self.m1en, self.m1b, self.m1a = 25, 24, 23
         
         GPIO.setmode(GPIO.BCM)
         
