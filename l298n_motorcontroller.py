@@ -4,8 +4,8 @@ class L298N():
     def __init__(self):
         print("[INFO] initializing L298N chip...")
         
-        self.m2en, self.m2a, self.m2b = 17, 22, 27 #left motor
-        self.m1en, self.m1a, self.m1b = 25, 24, 23 #right motor
+        self.m2en, self.m2a, self.m2b = 17, 22, 27 #left motor (en, neg, pos)
+        self.m1en, self.m1a, self.m1b = 25, 23, 24 #right motor (en, neg, pos)
         
         GPIO.setmode(GPIO.BCM)
         
